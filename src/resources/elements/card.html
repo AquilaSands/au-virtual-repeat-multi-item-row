@@ -1,0 +1,12 @@
+<template>
+  <div class="card">
+    <canvas class="header-bg" width="250" height="70"></canvas>
+    <div class="avatar">
+        <img src.bind="user.avatar_url" ref="image"/>
+    </div>
+    <div class="content">
+        <p class="name">${user.login}</p>
+        <p><a target="_blank" class="btn btn-default" href.bind="user.html_url">Contact</a></p>
+    </div>
+</div>
+</template>

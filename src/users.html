@@ -1,0 +1,20 @@
+<template>
+  <require from="elements/card"></require>
+
+  <section class="au-animate">
+      <h2>${heading}</h2>
+      <div>
+        <label for="items-per-row">Items per row</label>
+        <select id="items-per-row" value.bind="cardsPerRow">
+          <option repeat.for="i of 10" model.bind="i+1">${i+1}</option>
+        </select>
+      </div>
+      <div class="au-stagger">
+        <div class="card-container au-animate" virtual-repeat.for="row of users" infinite-scroll-next="getMore">
+          <div class="v-row">
+              <card class="v-card" user.bind="user" repeat.for="user of row"></card>
+          </div>            
+        </div>
+      </div>
+  </section>
+</template>
